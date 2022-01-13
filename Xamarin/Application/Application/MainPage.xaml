@@ -9,6 +9,31 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto">
+
+            </RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Grid Margin="-36,10,10,-208">
+
+
+            <Image Source="sthlmbild.jfif"></Image>
+
+
+        </Grid>
+        <Image HorizontalAlignment="Left" Source="/Assets/st.b.png" Height="1488" VerticalAlignment="Top" Width="1600" Stretch="Fill" Margin="-73,-448,0,0"/>
+        <Border BorderThickness="1" BorderBrush="Black" Margin="412,84,412,183" Background="#FF3648DD"/>
+        <TextBlock Text="NikeMap" FontFamily="Elephant" FontSize="90" Margin="540,108,536,750" Foreground="#FFD9EC16" >
+
+        </TextBlock>
+
+        <TextBox x:Name="TBEmail"  HorizontalAlignment="Center" FontSize="40"   CornerRadius="30" Background="White" Margin="0,260,0,0" Text="Email" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="72" Foreground="LightGray"/>
+        <TextBox x:Name="TBPassword"  HorizontalAlignment="Center" FontSize="40" CornerRadius="30" Background="White" Margin="0,394,0,0" Text="Lösenord" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="72" Foreground="LightGray"/>
+        <Button x:Name="BTRegister" Content="Registrera" FontSize="25" CornerRadius="20"  Background="Green" Margin="795,574,0,0" VerticalAlignment="Top" Height="59" Width="193" Foreground="#FFEEF6F5"/>
+        <Button x:Name="BTLoggin" Content="Logga in" FontSize="25" CornerRadius="20" Background="White" Margin="513,574,0,0" VerticalAlignment="Top" Height="59" Width="193" Foreground="#FF078B1A"/>
+
 
     </Grid>
 </Page>

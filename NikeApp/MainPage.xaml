@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="NikeApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NikeApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="1080" d:DesignWidth="1920"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <StackPanel>
+
+            <Grid>
+
+
+                <Image HorizontalAlignment="Center" Margin="0,-173,0,174" Width="1200" Source="/Assets/st.b.png" Stretch="Fill"/>
+                <Border BorderThickness="1" BorderBrush="#FFE26919" Margin="500,28,500,395" Background="#FF3648DD"/>
+                <TextBlock Text="NikeMap" HorizontalAlignment="Center" FontFamily="Elephant" FontSize="90" Margin="0,84,0,0" Foreground="#FFD9EC16" TextAlignment="Center" VerticalAlignment="Top" Width="917" Height="116" Grid.Row="1" >
+
+                </TextBlock>
+
+                <TextBox x:Name="TBEmail"  HorizontalAlignment="Center" FontSize="40"   CornerRadius="30" Background="White" Margin="0,204,0,0" Text="Email" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="72" Foreground="LightGray" Grid.Row="1"/>
+                <TextBox x:Name="TBPassword"  HorizontalAlignment="Center" FontSize="40" CornerRadius="30" Background="White" Margin="0,338,0,0" Text="Lösenord" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="72" Foreground="LightGray" Grid.Row="1"/>
+                <Button x:Name="BTRegister" Content="Registrera" FontSize="25" CornerRadius="20"  Background="Green" Margin="800,492,0,0" VerticalAlignment="Top" Height="59" Width="193" Foreground="#FFEEF6F5" Grid.Row="1"/>
+                <Button x:Name="BTLoggin" Content="Logga in" FontSize="25" CornerRadius="20" Background="White" Margin="551,491,0,0" VerticalAlignment="Top" Height="59" Width="193" Foreground="#FF078B1A" Grid.Row="1"/>
+
+            </Grid>
+        </StackPanel>
+
+
+    </Grid>
+</Page>
