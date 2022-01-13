@@ -1,6 +1,7 @@
 using Api.Model;
 using Api.Model.MappingProfiles;
 using Api.Repository;
+using Api.Services.AuthorizationServices;
 using Api.Services.UserServices;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
@@ -50,6 +51,7 @@ namespace Api
         public void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthorizationService, AuthorizationService>(); 
         }
 
         public void RegisterRepositorys(IServiceCollection services)

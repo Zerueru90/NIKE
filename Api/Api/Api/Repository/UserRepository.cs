@@ -1,4 +1,5 @@
 ﻿using Api.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,10 @@ namespace Api.Repository
         public User Get(int id)
         {
             throw new NotImplementedException();
+        }
+        public async Task<User> GetByLogin(string email, byte[] password)
+        {
+            return await _context.Users.AsNoTracking().Where(user => user.Email == email && user.Password == password).FirstOrDefaultAsync();
         }
 
         public IEnumerable<User> GetAll()

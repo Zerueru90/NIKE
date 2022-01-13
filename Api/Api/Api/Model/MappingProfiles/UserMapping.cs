@@ -13,7 +13,7 @@ namespace Api.Model.MappingProfiles
         public UserMapping()
         {
             CreateMap<UserDto, User>().ForMember(des => des.Password, opt => opt.MapFrom(src => src.Password.GenerateEncryption()));
+            CreateMap<User, UserDto>().ForMember(des => des.Password, opt => opt.MapFrom(src => src.Username)); 
         }
-
     }
 }

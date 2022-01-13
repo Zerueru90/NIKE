@@ -42,4 +42,14 @@ namespace Api.Model
 
     }
 
+    public class LogInModel
+    {
+        [Required]
+        [RegularExpression(@"^[\w-.]+@([\w-]+.)+[\w-]{2,4}$")]
+        public string Email { get; set; }
+        [Required]
+        //[RegularExpression(@"^(?=.[a-z])(?=.[A-Z])(?=.\d)[A-Za-z\d@$!%#?&]{8,255}$")]
+        public string Password { get; set; }
+    }
+
 }
