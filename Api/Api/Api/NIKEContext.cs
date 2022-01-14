@@ -79,9 +79,10 @@ namespace Api
 
                 entity.Property(e => e.Name).IsRequired();
 
-                entity.Property(e => e.XCordinate).HasColumnName("xCordinate");
+                entity.Property(e => e.Longitude).HasColumnName("xCordinate");
 
-                entity.Property(e => e.YCordinate).HasColumnName("yCordinate");
+                entity.Property(e => e.Latitude).HasColumnName("yCordinate");
+                entity.HasOne(e => e.City).WithMany(p => p.Poi).HasForeignKey(o => o.CityID).HasConstraintName("FK_City");
             });
 
             modelBuilder.Entity<Reaction>(entity =>

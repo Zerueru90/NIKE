@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -7,9 +8,19 @@ namespace Api.Model
 {
     public partial class Location
     {
+        [Required]
         public long Id { get; set; }
+        [Required]
         public string Name { get; set; }
-        public long YCordinate { get; set; }
-        public long XCordinate { get; set; }
+        [Required]
+        public long Longitude { get; set; }
+        [Required]
+        public long Latitude { get; set; }
+        [Required]
+        public long CityID { get; set; }
+
+        public virtual City City {  get; set; }
+
+
     }
 }
