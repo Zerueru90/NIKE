@@ -25,8 +25,6 @@ namespace Api.Services.UserServices
             await _repository.Add(user);
 
             return userDto;
-
-
         }
     }
 }
