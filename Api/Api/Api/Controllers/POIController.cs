@@ -1,4 +1,5 @@
-﻿using Api.Services.POIServices;
+﻿using Api.Model;
+using Api.Services.POIServices;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -22,5 +23,12 @@ namespace Api.Controllers
         {
             return Ok(await _service.GetPOI(longitude, latitude));
         }
+
+        [HttpPost]
+        public async Task<IActionResult> SetPOI([FromBody] POIDto poiDto)
+        {
+            return Ok(await _service.SetPOI(poiDto)); 
+        }
+
     }
 }
