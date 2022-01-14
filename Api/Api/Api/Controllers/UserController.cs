@@ -24,9 +24,5 @@ namespace Api.Controllers
         {
             return Ok(await _userService.AddUser(userDto));
         }
-
-
-
     }
-
 }
