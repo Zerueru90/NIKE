@@ -18,7 +18,34 @@ namespace Api.Repository
 
         public async Task<POI> Get(double Longitude, double Latitude)
         {
-            return await _context.POI.AsNoTracking().Include(x => x.City).FirstOrDefaultAsync(POI => POI.Longitude == Longitude && POI.Latitude == Latitude);
+            var thingToLookat = await _context.POI.AsNoTracking().Include(x => x.City).ThenInclude(c => c.Country).FirstOrDefaultAsync(POI => POI.Longitude == Longitude && POI.Latitude == Latitude);
+            return thingToLookat; 
+        }
+
+        public async Task<POI> Set(POIDto pOIDto)
+        {
+            var city = await _context.Cities.FirstOrDefaultAsync(c => c.Name == pOIDto.City);
+
+            if (city == null)
+            {
+                var country = await _context.Countries.FirstOrDefaultAsync(co => co.Name == pOIDto.Country);
+                if (country == null)
+                {
+                    country = new Country { Name = pOIDto.Country };
+                    await _context.Countries.AddAsync(country);
+                    await _context.SaveChangesAsync();
+                }
+                city = new City { CountryId = country.Id, Name = pOIDto.City };
+                await _context.Cities.AddAsync(city);
+                await _context.SaveChangesAsync();
+            }
+            var poi = new POI { Name = pOIDto.Name, Longitude = pOIDto.Longitude, Latitude = pOIDto.Latitude, CityID = city.Id };
+
+            await _context.AddAsync(poi);
+
+            await _context.SaveChangesAsync();
+
+            return poi; 
         }
     }
 }
