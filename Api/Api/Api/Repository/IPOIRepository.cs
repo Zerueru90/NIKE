@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Api.Services.POIServices
+namespace Api.Repository
 {
-    public interface IPOIService
+    public interface IPOIRepository
     {
-
-        Task<POIDto> GetPOI(double Longitude, double Latitude);
+        Task<POI> Get(double Longitude, double Latitude);
     }
 }

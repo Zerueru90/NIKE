@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Api.Services.POIServices;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +7,20 @@ using System.Threading.Tasks;
 
 namespace Api.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class POIController : Controller
     {
-        public IActionResult Index()
+        private readonly IPOIService _service;
+        public POIController(IPOIService service)
         {
-            return View();
+            _service = service;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPOI([FromQuery] double longitude, [FromQuery] double latitude)
+        {
+            return Ok(await _service.GetPOI(longitude, latitude));
         }
     }
 }
