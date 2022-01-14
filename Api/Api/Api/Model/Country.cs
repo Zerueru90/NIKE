@@ -12,5 +12,12 @@ namespace Api.Model
         public long Id { get; set; }
         [Required]
         public string Name { get; set; }
+
+        public virtual ICollection<City> Cities { get; set; }
+
+        public Country()
+        {
+            Cities = new HashSet<City>();
+        }
     }
 }

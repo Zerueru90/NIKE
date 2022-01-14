@@ -3,14 +3,16 @@ using System;
 using Api;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Api.Migrations
 {
     [DbContext(typeof(NIKEContext))]
-    partial class NIKEContextModelSnapshot : ModelSnapshot
+    [Migration("20220114093718_2022-01-14_AddedForeignKeyToCountryCity")]
+    partial class _20220114_AddedForeignKeyToCountryCity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,12 +126,12 @@ namespace Api.Migrations
                     b.Property<long>("CityID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<double>("Latitude")
-                        .HasColumnType("REAL")
+                    b.Property<long>("Latitude")
+                        .HasColumnType("INTEGER")
                         .HasColumnName("Latitude");
 
-                    b.Property<double>("Longitude")
-                        .HasColumnType("REAL")
+                    b.Property<long>("Longitude")
+                        .HasColumnType("INTEGER")
                         .HasColumnName("Longitude");
 
                     b.Property<string>("Name")

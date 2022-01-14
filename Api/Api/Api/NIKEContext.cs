@@ -38,6 +38,7 @@ namespace Api
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.CountryId).HasColumnName("CountryID");
+                entity.HasOne(e => e.Country).WithMany(p => p.Cities).HasForeignKey(o => o.CountryId).HasConstraintName("FK_Country");
             });
 
             modelBuilder.Entity<Comment>(entity =>
