@@ -1,8 +1,4 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Api.Model.MappingProfiles
 {
@@ -11,7 +7,9 @@ namespace Api.Model.MappingProfiles
         public POIMapping()
         {
             //TODO add country name 
-            CreateMap<POI, POIDto>().ForMember(dest => dest.City, opt => opt.MapFrom(src => src.City.Name));
+            CreateMap<POI, POIDto>().ForMember(dest => dest.City, opt => opt.MapFrom(src => src.City.Name))
+                .ForMember(dest => dest.Country, opt => opt.MapFrom(src => src.City.Country.Name));
+           
         }
     }
 }

@@ -4,13 +4,56 @@
     xmlns:local="using:NikeApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    
+    xmlns:Custom="using:Windows.UI.Xaml.Controls.Maps"
+    
     x:Class="NikeApp.MapPage"
+    
     mc:Ignorable="d"
+      
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <maps:MapControl x:Name="MapControl1" MapServiceToken="Bok3YYE6XPyUCrbvBKNr~BI5_je8mabUc5iQXZ1iexw~AjqDO-n2xNK2Ccj9dX3YU0aUnZ2bXs6IdO7XnWIBqHtZV_Oll5PKCe2JZ9MZe2Wr"/>
+
+        
+        
+        <Custom:MapControl x:Name="Mapsample" MapServiceToken="(Map Service token from Bing Developer centre)" Margin="0,10,0,10"/>
+
+
+        <Border Margin="0,0,1376,0">
+
+            <ListView x:Name="Attractions" Background="White">
+                <TextBox x:Name="Locationname" Margin="0,10,0,0" Width="450" Height="70" HorizontalAlignment="Left" FontSize="40"  
+                 CornerRadius="30" Background="White" BorderThickness="5" >
+
+                </TextBox>
+
+            </ListView>
+        </Border>
+        <Grid>
+
+
+
+            <TextBox x:Name="TBSearchbar" Margin="1358,15,0,0" HorizontalAlignment="Left" FontSize="40"  
+                 CornerRadius="30" Background="White"  Text="Sök" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="475" Height="72"
+                 Foreground="LightGray" />
+            <Button x:Name="searchbutt" Margin="1850,15,0,0" Height="60" Width="60" VerticalAlignment="Top" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Assets/optic.jpg"/>
+                </Button.Background>
+            </Button>
+
+            <Button  x:Name="pinbutt" Margin="1850,90,0,0" Height="60" Width="60" VerticalAlignment="Top" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Assets/knapp.png"/>
+                </Button.Background>
+
+            </Button>
+        </Grid>
+
+
+
     </Grid>
-    
 </Page>
