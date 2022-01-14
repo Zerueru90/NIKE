@@ -34,5 +34,10 @@ namespace NikeApp
             this.Frame.Navigate(typeof(RegisterPage));
             
         }
+
+        private void BTLoggin_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MapPage));
+        }
     }
 }

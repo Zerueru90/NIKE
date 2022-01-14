@@ -17,7 +17,44 @@
 
     <Grid>
 
-        <Custom:MapControl/>
+        
+        
+        <Custom:MapControl x:Name="Mapsample" MapServiceToken="(Map Service token from Bing Developer centre)" Margin="0,10,0,10"/>
+
+
+        <Border Margin="0,0,1376,0">
+
+            <ListView x:Name="Attractions" Background="White">
+                <TextBox x:Name="Locationname" Margin="0,10,0,0" Width="450" Height="70" HorizontalAlignment="Left" FontSize="40"  
+                 CornerRadius="30" Background="White" BorderThickness="5" >
+
+                </TextBox>
+
+            </ListView>
+        </Border>
+        <Grid>
+
+
+
+            <TextBox x:Name="TBSearchbar" Margin="1358,15,0,0" HorizontalAlignment="Left" FontSize="40"  
+                 CornerRadius="30" Background="White"  Text="Sök" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="475" Height="72"
+                 Foreground="LightGray" />
+            <Button x:Name="searchbutt" Margin="1850,15,0,0" Height="60" Width="60" VerticalAlignment="Top" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Assets/optic.jpg"/>
+                </Button.Background>
+            </Button>
+
+            <Button  x:Name="pinbutt" Margin="1850,90,0,0" Height="60" Width="60" VerticalAlignment="Top" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Assets/knapp.png"/>
+                </Button.Background>
+
+            </Button>
+        </Grid>
+
+
 
     </Grid>
 </Page>

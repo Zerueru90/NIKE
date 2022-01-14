@@ -28,20 +28,26 @@ namespace NikeApp
         public MapPage()
         {
             this.InitializeComponent();
-            //Mapsample.Loaded += Mapsample_Loaded;
+            Mapsample.Loaded += Mapsample_Loaded;
         }
-        //private async void Mapsample_Loaded(object sender, RoutedEventArgs e)
-        //{
 
-        //    var center =
-        //        new Geopoint(new BasicGeoposition()
-        //        {
-        //            Latitude = 11.66509,
-        //            Longitude = 78.154587
+        private async void Mapsample_Loaded(object sender, RoutedEventArgs e)
+        {
 
-        //        });
-        //    await Mapsample.TrySetSceneAsync(MapScene.CreateFromLocationAndRadius(center, 3000));
-        //}
+            var center =
+                new Geopoint(new BasicGeoposition()
+                {
+                    Latitude = 11.66509,
+                    Longitude = 78.154587
 
+                });
+
+            await Mapsample.TrySetSceneAsync(MapScene.CreateFromLocationAndRadius(center, 3000));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

@@ -32,7 +32,7 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             
                  <Button x:Name="BTRegister" Margin="20,40" Content="Registrera" FontSize="25" CornerRadius="20"  Background="Green"  VerticalAlignment="Top" Height="59" Width="193" Foreground="#FFEEF6F5" Grid.Row="4" Click="BTRegister_Click"/>
-                <Button x:Name="BTLoggin" Margin="20,40" Content="Logga in" FontSize="25" CornerRadius="20" Background="White" VerticalAlignment="Top" Height="59" Width="193" Foreground="#FF078B1A" Grid.Row="4"/>
+                <Button x:Name="BTLoggin" Margin="20,40" Content="Logga in" FontSize="25" CornerRadius="20" Background="White" VerticalAlignment="Top" Height="59" Width="193" Foreground="#FF078B1A" Grid.Row="4" Click="BTLoggin_Click"/>
                        
                         </StackPanel>      
                    
