@@ -25,6 +25,7 @@
                 <TextBlock Text="NikeMap" HorizontalAlignment="Center" FontFamily="Elephant" FontSize="90" Margin="0,84,0,0" Foreground="#FFD9EC16" TextAlignment="Center" VerticalAlignment="Top" Width="917" Height="116" Grid.Row="1" >
 
                 </TextBlock>
+                      
                 <TextBox x:Name="TBEmail" Margin="20" HorizontalAlignment="Center" FontSize="40"   CornerRadius="30" Background="White"  Text="Email" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="72" Foreground="LightGray" Grid.Row="2"/>
                 
                         
