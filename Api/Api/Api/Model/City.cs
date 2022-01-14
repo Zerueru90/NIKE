@@ -15,11 +15,11 @@ namespace Api.Model
         [Required]
         public long? CountryId { get; set; }
 
-        public virtual ICollection<Location> Poi { get; set; }
+        public virtual ICollection<POI> POI { get; set; }
 
         public City()
         {
-            Poi = new HashSet<Location>();
+            POI = new HashSet<POI>();
         }
     }
 }

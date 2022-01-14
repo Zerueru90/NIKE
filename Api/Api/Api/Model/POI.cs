@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Api.Model
 {
-    public partial class Location
+    public partial class POI
     {
         [Required]
         public long Id { get; set; }
