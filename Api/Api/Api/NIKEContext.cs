@@ -22,7 +22,7 @@ namespace Api
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Entry> Entries { get; set; }
-        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<POI> POI { get; set; }
         public virtual DbSet<Reaction> Reactions { get; set; }
         public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -71,18 +71,18 @@ namespace Api
                 entity.Property(e => e.UserId).HasColumnName("UserID");
             });
 
-            modelBuilder.Entity<Location>(entity =>
+            modelBuilder.Entity<POI>(entity =>
             {
-                entity.ToTable("Location");
+                entity.ToTable("POI");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Name).IsRequired();
 
-                entity.Property(e => e.Longitude).HasColumnName("xCordinate");
+                entity.Property(e => e.Longitude).HasColumnName("Longitude");
 
-                entity.Property(e => e.Latitude).HasColumnName("yCordinate");
-                entity.HasOne(e => e.City).WithMany(p => p.Poi).HasForeignKey(o => o.CityID).HasConstraintName("FK_City");
+                entity.Property(e => e.Latitude).HasColumnName("Latitude");
+                entity.HasOne(e => e.City).WithMany(p => p.POI).HasForeignKey(o => o.CityID).HasConstraintName("FK_City");
             });
 
             modelBuilder.Entity<Reaction>(entity =>
