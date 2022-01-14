@@ -24,7 +24,7 @@
 
                 <TextBox x:Name="TBEmail"  HorizontalAlignment="Center" FontSize="40"   CornerRadius="30" Background="White" Margin="0,204,0,0" Text="Email" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="72" Foreground="LightGray" Grid.Row="1"/>
                 <TextBox x:Name="TBPassword"  HorizontalAlignment="Center" FontSize="40" CornerRadius="30" Background="White" Margin="0,338,0,0" Text="Lösenord" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" Height="72" Foreground="LightGray" Grid.Row="1"/>
-                <Button x:Name="BTRegister" Content="Registrera" FontSize="25" CornerRadius="20"  Background="Green" Margin="800,492,0,0" VerticalAlignment="Top" Height="59" Width="193" Foreground="#FFEEF6F5" Grid.Row="1"/>
+                <Button x:Name="BTRegister" Content="Registrera" FontSize="25" CornerRadius="20"  Background="Green" Margin="800,492,0,0" VerticalAlignment="Top" Height="59" Width="193" Foreground="#FFEEF6F5" Grid.Row="1" Click="BTRegister_Click"/>
                 <Button x:Name="BTLoggin" Content="Logga in" FontSize="25" CornerRadius="20" Background="White" Margin="551,491,0,0" VerticalAlignment="Top" Height="59" Width="193" Foreground="#FF078B1A" Grid.Row="1"/>
 
             </Grid>
